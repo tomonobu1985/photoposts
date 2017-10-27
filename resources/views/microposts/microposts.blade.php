@@ -13,11 +13,15 @@
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
             </div>
             <div>
+<div style="float:right; ">
+    <div style="float:right; ">
                 @if (Auth::user()->id == $micropost->user_id)
                     {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
+    </div>
+    <div style="float:right; ">
                 @if (Auth::user()->is_users_favorites($micropost->id))
                     {!! Form::open(['route' => ['users.removefavorites', $micropost->id], 'method' => 'delete']) !!}
 <!--                        {!! Form::submit('お気に入り', ['class' => "glyphicon glyphicon-star"]) !!}  -->
@@ -38,6 +42,11 @@
 <!--                        <button type="submit"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>　　　-->
                         {!! Form::close() !!}
                 @endif
+    </div>
+<div style="float:right; ">
+                    <img src="{{ $micropost -> content }}" width=60 height=60 alt="">
+</div>
+                </div>
             </div>
         </div>
     </li>

@@ -10,6 +10,9 @@
                     </div>
                     {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                 {!! Form::close() !!}
+                <br />
+                <!-- ここに画像データのURLを入れる -->
+<!--                <img src="http://cdn.mkimg.carview.co.jp/minkara/userstorage/000/002/895/096/b26c500218.jpg" width=360 height=360/>-->
             </aside>
             <div class="col-xs-8">
                 @if (count($microposts) > 0)
